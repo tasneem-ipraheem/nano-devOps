@@ -1,9 +1,6 @@
 package com.example.demo.controllers;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,20 +43,18 @@ public class UserController {
 	@PostMapping("/create")
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
 		User user = new User();
-		
+		Cart cart = new Cart();
+
 		if (createUserRequest.getPassword().length() < 7 ||
 			!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())	) {
 			return ResponseEntity.badRequest().build();
 		}
+		
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 		user.setUsername(createUserRequest.getUsername());
-
-		
-		
-		Cart cart = new Cart();
-		cartRepository.save(cart);
-		
 		user.setCart(cart);
+
+		cartRepository.save(cart);
 		userRepository.save(user);
 		
 		return ResponseEntity.ok(user);

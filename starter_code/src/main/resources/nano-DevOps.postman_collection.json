@@ -8,8 +8,18 @@
 		{
 			"name": "user/create",
 			"request": {
+				"auth": {
+					"type": "bearer"
+				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"username\":\"tasneem\",\r\n    \"password\":\"1234567\",\r\n    \"confirmPassword\":\"1234567\"\r\n}",
@@ -39,10 +49,17 @@
 			"name": "user/login",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"1234567\"\r\n}",
+					"raw": "{\r\n    \"username\":\"tasneem\",\r\n    \"password\":\"1234567\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,7 +67,42 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/user/login",
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/addToCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"tasneem\",\r\n    \"itemId\":1,\r\n    \"quantity\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/addToCart",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,8 +110,200 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"user",
-						"login"
+						"cart",
+						"addToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/removeFromCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"tasneem\",\r\n    \"itemId\":1,\r\n    \"quantity\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/removeFromCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						"removeFromCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/submit/tasneem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"submit",
+						"tasneem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/history/tasneem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"history",
+						"tasneem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item/getById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/item/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item/getByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/item/name/Round Widget",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"item",
+						"name",
+						"Round Widget"
 					]
 				}
 			},

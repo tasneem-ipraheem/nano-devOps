@@ -1,6 +1,16 @@
 package com.example.demo.controllers;
 
 import java.util.List;
+import java.util.Optional;
+
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,23 +25,35 @@ import com.example.demo.model.persistence.repositories.ItemRepository;
 @RestController
 @RequestMapping("/api/item")
 public class ItemController {
+	
+	final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
 	@Autowired
 	private ItemRepository itemRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Item>> getItems() {
+		logger.info("start getItems");
+
 		return ResponseEntity.ok(itemRepository.findAll());
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Item> getItemById(@PathVariable Long id) {
-		return ResponseEntity.of(itemRepository.findById(id));
+		logger.info("start getItemById");
+		Optional<Item> item = itemRepository.findById(id);
+		logger.info("is item returned ? "+item.isPresent());
+		return ResponseEntity.of(item);
 	}
 	
 	@GetMapping("/name/{name}")
 	public ResponseEntity<List<Item>> getItemsByName(@PathVariable String name) {
+		logger.info("start getItemsByName");
+
 		List<Item> items = itemRepository.findByName(name);
+		
+		logger.info("items size : "+items.size());
+
 		return items == null || items.isEmpty() ? ResponseEntity.notFound().build()
 				: ResponseEntity.ok(items);
 			

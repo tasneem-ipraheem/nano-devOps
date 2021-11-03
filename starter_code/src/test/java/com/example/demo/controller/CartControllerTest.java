@@ -5,21 +5,20 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.Optional;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.demo.UtilClass;
 import com.example.demo.controllers.CartController;
 import com.example.demo.model.persistence.Cart;
+import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.ItemRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
-import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.model.requests.ModifyCartRequest;
 
 public class CartControllerTest {
@@ -29,12 +28,9 @@ public class CartControllerTest {
 	private ItemRepository itemRepo = mock(ItemRepository.class);
 	private CartRepository cartRepo = mock(CartRepository.class);
 
-	private BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
-	
-
-	
 	private User testUser ;
-	ResponseEntity<Cart> responce ;
+	private Item item ;
+	ResponseEntity<Cart> responce;
 	
 	@Before
 	public void setUp(){
@@ -44,16 +40,21 @@ public class CartControllerTest {
 		UtilClass.injectObjects(CartController, "cartRepository", cartRepo);
 		UtilClass.injectObjects(CartController, "itemRepository", itemRepo);
 		
-		testUser = intializeUser();
+		testUser = UtilClass.intializeUser();
+		item = UtilClass.intializeItem();
+		
+		when(userRepo.findByUsername(testUser.getUsername())).thenReturn(testUser);
+		when(userRepo.findById(0L)).thenReturn(Optional.of(testUser));
+		when(itemRepo.findById(0L)).thenReturn(Optional.of(item));
 
 	}
 	
 	
 	@Test
-	public void addTocart()throws Exception{
-		testUser = intializeUser();
+	public void addTocart(){
+		
 		ModifyCartRequest request = new ModifyCartRequest();
-		request.setItemId(1);
+		request.setItemId(0L);
 		request.setQuantity(1);
 		request.setUsername(testUser.getUsername());
 		
@@ -63,20 +64,13 @@ public class CartControllerTest {
 		
 		Cart cart = responce.getBody();
 		assertNotNull(cart);
-		assertEquals("0", cart.getId());
+		assertEquals("0", ""+cart.getId());
 		assertEquals(testUser, cart.getUser());
 
 	}
 	
 	
-	public User intializeUser(){
-		User user = new User();
-		user.setId(0);
-		user.setUsername("admin");
-		user.setPassword("pass12345");
 
-		return user;
-	}
 	
 
 }

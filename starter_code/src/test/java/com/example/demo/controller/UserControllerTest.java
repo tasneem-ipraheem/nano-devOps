@@ -24,7 +24,7 @@ public class UserControllerTest {
 	private CartRepository cartRepo = mock(CartRepository.class);
 	private BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
 	
-	private User testUser ;
+	private User testUser   = new User();
 	ResponseEntity<User> responce ;
 	
 	@Before
@@ -36,7 +36,6 @@ public class UserControllerTest {
 		UtilClass.injectObjects(userController, "bCryptPasswordEncoder", encoder);
 		
 		testUser = intializeUser();
-
 	}
 	
 	
@@ -60,6 +59,17 @@ public class UserControllerTest {
 
 	}
 	
+	@Test
+	public void findById(){
+		when(encoder.encode("pswrd123")).thenReturn("thisIsHashed");
+
+		responce = userController.findById(0L);
+		assertNotNull(responce);
+		assertEquals(200, responce.getStatusCodeValue());
+		assertEquals(0, responce.getBody().getId());
+
+	}
+	
 	
 	public User intializeUser(){
 		when(encoder.encode("pswrd123")).thenReturn("thisIsHashed");
@@ -69,8 +79,12 @@ public class UserControllerTest {
 		request.setConfirmPassword("pswrd123");
 
 		final ResponseEntity<User> responce = userController.createUser(request);
+		User user = responce.getBody();
+		user.setId(0L);
 		
-		return responce.getBody();
+        when(userRepo.findById(0L)).thenReturn(java.util.Optional.of(testUser));
+
+		return user;
 	}
 	
 

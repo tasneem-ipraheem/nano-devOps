@@ -48,6 +48,9 @@ public class OrderController {
 		logger.info("order : total "+order.getTotal());
 
 		orderRepository.save(order);
+		
+		logger.info("success createOrder : "+order.getId());
+
 		return ResponseEntity.ok(order);
 	}
 	

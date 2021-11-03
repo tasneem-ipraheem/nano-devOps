@@ -289,3 +289,70 @@ insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505
 2021-11-03 05:24:41,544 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-2] start createUser
 2021-11-03 05:24:41,697 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-2] user name : tasneema9
 2021-11-03 05:24:41,740 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-2] success createUser : 4
+2021-11-03 06:25:01,463 INFO org.springframework.boot.StartupInfoLogger [main] Starting SareetaApplication on LAPTOP-GIBPL6OL with PID 12732 (started by tasne in C:\Users\tasne\Desktop\nanoDegreeJava\5. devOps\nd035-c4-Security-and-DevOps-master\starter_code)
+2021-11-03 06:25:01,471 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.5.RELEASE, Spring v5.1.7.RELEASE
+2021-11-03 06:25:01,473 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-11-03 06:25:04,170 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-03 06:25:04,787 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 543ms. Found 4 repository interfaces.
+2021-11-03 06:25:07,868 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79897f5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-03 06:25:09,837 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-11-03 06:25:09,891 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-03 06:25:09,939 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-11-03 06:25:09,940 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2021-11-03 06:25:10,595 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-11-03 06:25:10,596 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 8962 ms
+2021-11-03 06:25:11,281 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2021-11-03 06:25:11,928 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-11-03 06:25:12,167 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-03 06:25:12,454 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2021-11-03 06:25:12,460 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2021-11-03 06:25:12,943 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-03 06:25:13,589 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-11-03 06:25:16,305 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-03 06:25:17,827 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'JWTAuthenticationVerficationFilter' configured for use
+2021-11-03 06:25:19,305 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-03 06:25:19,660 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6127ef86, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b9dc62f, org.springframework.security.web.header.HeaderWriterFilter@69e8b711, org.springframework.web.filter.CorsFilter@542754be, org.springframework.security.web.authentication.logout.LogoutFilter@848d9bc, com.example.demo.security.JWTAuthenticationFilter@af57949, com.example.demo.security.JWTAuthenticationVerficationFilter@f833223, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f9236d8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d117280, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5186b78a, org.springframework.security.web.session.SessionManagementFilter@d99df7a, org.springframework.security.web.access.ExceptionTranslationFilter@58647985, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4bac0be5]
+2021-11-03 06:25:20,364 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-03 06:25:21,121 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-11-03 06:25:21,317 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-03 06:25:21,329 INFO org.springframework.boot.StartupInfoLogger [main] Started SareetaApplication in 20.811 seconds (JVM running for 21.363)
+2021-11-03 06:29:35,702 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-03 06:29:35,704 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-11-03 06:29:35,713 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 9 ms
+2021-11-03 06:29:35,856 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-1] start createUser
+2021-11-03 06:29:36,016 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-1] user name : tasneema9
+2021-11-03 06:29:36,106 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-1] success createUser : 1
+2021-11-03 06:29:40,528 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-5] start createUser
+2021-11-03 06:29:40,636 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-5] user name : tasneema
+2021-11-03 06:29:40,641 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-5] success createUser : 2
+2021-11-03 06:29:44,556 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-6] start createUser
+2021-11-03 06:29:44,766 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-6] user name : tasneem
+2021-11-03 06:29:44,771 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-6] success createUser : 3
+2021-11-03 06:29:53,723 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-9] start createUser
+2021-11-03 06:29:53,843 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-9] user name : tasneemf
+2021-11-03 06:29:53,849 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-9] success createUser : 4
+2021-11-03 06:33:18,381 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-4] start createUser
+2021-11-03 06:33:18,480 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-4] user name : tasnim
+2021-11-03 06:33:18,484 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-4] success createUser : 5
+2021-11-03 06:33:52,859 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-7] start createUser
+2021-11-03 06:33:53,068 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-7] user name : tasnim1
+2021-11-03 06:33:53,076 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-7] success createUser : 6
+2021-11-03 06:44:44,635 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-1] start submit
+2021-11-03 06:44:44,661 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8080-exec-1] HHH000397: Using ASTQueryTranslatorFactory
+2021-11-03 06:44:44,843 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-1] order : user tasneem
+2021-11-03 06:44:44,844 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-1] order : total null
+2021-11-03 06:44:44,861 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-1] success createOrder : 1
+2021-11-03 06:44:45,931 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-5] start submit
+2021-11-03 06:44:45,934 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-5] order : user tasneem
+2021-11-03 06:44:45,934 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-5] order : total null
+2021-11-03 06:44:45,937 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-5] success createOrder : 2
+2021-11-03 06:44:47,042 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-6] start submit
+2021-11-03 06:44:47,045 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-6] order : user tasneem
+2021-11-03 06:44:47,045 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-6] order : total null
+2021-11-03 06:44:47,049 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-6] success createOrder : 3
+2021-11-03 06:44:48,091 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-9] start submit
+2021-11-03 06:44:48,101 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-9] order : user tasneem
+2021-11-03 06:44:48,103 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-9] order : total null
+2021-11-03 06:44:48,110 INFO com.example.demo.controllers.OrderController [http-nio-8080-exec-9] success createOrder : 4

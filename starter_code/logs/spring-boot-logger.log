@@ -1,9 +1,9 @@
-2021-11-03 02:44:09,467 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-8] start createUser
-2021-11-03 02:44:09,819 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-8] user name : tasneem
-2021-11-03 02:44:09,829 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] SQL Error: 23505, SQLState: 23505
-2021-11-03 02:44:09,831 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-8] Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
+2021-11-03 02:46:45,619 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-2] start createUser
+2021-11-03 02:46:46,023 INFO com.example.demo.controllers.UserController [http-nio-8080-exec-2] user name : tasneem
+2021-11-03 02:46:46,048 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] SQL Error: 23505, SQLState: 23505
+2021-11-03 02:46:46,051 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-2] Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
 insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]
-2021-11-03 02:44:09,855 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
+2021-11-03 02:46:46,063 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
 insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
 org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
 insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]
@@ -179,6 +179,6 @@ insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2021-11-03 02:44:16,817 INFO com.example.demo.controllers.ItemController [http-nio-8080-exec-1] start getItemsByName
-2021-11-03 02:44:16,853 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8080-exec-1] HHH000397: Using ASTQueryTranslatorFactory
-2021-11-03 02:44:17,125 INFO com.example.demo.controllers.ItemController [http-nio-8080-exec-1] items size : 1
+2021-11-03 02:47:01,253 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-8080-exec-9] Request is to process authentication
+2021-11-03 02:47:08,105 INFO com.example.demo.controllers.ItemController [http-nio-8080-exec-3] start getItemsByName
+2021-11-03 02:47:08,109 INFO com.example.demo.controllers.ItemController [http-nio-8080-exec-3] items size : 1

@@ -22,7 +22,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"tasneem\",\r\n    \"password\":\"1234567\",\r\n    \"confirmPassword\":\"1234567\"\r\n}",
+					"raw": "{\r\n    \"username\":\"tasnim1\",\r\n    \"password\":\"1234567\",\r\n    \"confirmPassword\":\"1234567\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -279,7 +279,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NTkyNzU2fQ.CmPA3c7ej2YG-NoctxZJ6fN9LJiFpRMGR7azrbAkCfjvsHVr_4Mp_tppudXEvTZEFQZc7dVDzfxElTFhM0rwww",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNuZWVtIiwiZXhwIjoxNjM2NzQzNTc4fQ.EEwTfgebA_XctXiwgaZPfCszDsMzforP6gY65IvuKf7jOfjbkXvSvN4ShhMyuXsAmE29zKpK5u4Yc1q6RQz25Q",
 						"type": "text"
 					}
 				],

@@ -1,0 +1,15 @@
+$ sudo service docker start
+$ start docker.service
+$ systemctl show --property ActiveState docker
+$ docker ps --filter "status=exited"
+	CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS                        PORTS                                                  NAMES
+	b20e4534e544   jenkinsci/blueocean   "/sbin/tini -- /usr/…"   38 minutes ago   Exited (255) 10 seconds ago   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 50000/tcp   myContainer
+
+$ docker start b20e4534e544
+
+#increase space
+
+$ sudo fallocate -l 1G /swapfile
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
